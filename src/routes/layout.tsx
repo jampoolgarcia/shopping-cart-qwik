@@ -8,7 +8,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({
     // Always serve a cached response by default, up to a week stale
     staleWhileRevalidate: 60 * 60 * 24 * 7,
-    // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
+    // Max once every 5 secondsp-4 box-content, revalidate on the server to get a fresh version of this page
     maxAge: 5,
   });
 };
@@ -16,8 +16,10 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 export default component$(() => {
   return (
     <>
+    <div class="bg-[#262837] w-full min-h-screen">
       <Sidebar />
       <Slot />
+    </div>
     </>
   );
 });
