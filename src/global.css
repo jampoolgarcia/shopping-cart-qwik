@@ -29,7 +29,7 @@ body {
 }
 
 .card {
-  @apply max-w-sm rounded overflow-hidden shadow-lg;
+  @apply bg-white rounded overflow-hidden shadow-lg;
 }
 
 .badge {
