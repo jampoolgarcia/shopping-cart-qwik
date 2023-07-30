@@ -1,5 +1,10 @@
 import { component$ } from '@builder.io/qwik';
 import { ProductItem } from './product-item';
+import { routeLoader$ } from '@builder.io/qwik-city';
+
+export const useProductRequest = routeLoader$(async() =>{
+  
+})
 
 export const ProductList = component$(() => {
   return (
