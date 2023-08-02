@@ -29,9 +29,32 @@ body {
 }
 
 .card {
-  @apply bg-white rounded overflow-hidden shadow-lg;
+  @apply bg-white rounded overflow-hidden shadow-lg max-h-[550px];
 }
 
 .badge {
   @apply bg-red-600 rounded-xl text-white text-center absolute inline-block px-3;
 }
+
+.truncate-text-3 {
+  /* Establece un alto máximo equivalente a tres líneas de texto */
+  max-height: calc(1.5em * 3); /* Ajusta 1.5em al tamaño de fuente del texto */
+  min-height: calc(1.5em * 3);
+  /* Propiedades para truncar el texto si excede el límite de líneas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.truncate-text-2 {
+  /* Establece un alto máximo equivalente a dos líneas de texto */
+  max-height: calc(1.5em * 2); /* Ajusta 1.5em al tamaño de fuente del texto */
+  min-height: calc(1.5em * 2);
+  /* Propiedades para truncar el texto si excede el límite de líneas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
