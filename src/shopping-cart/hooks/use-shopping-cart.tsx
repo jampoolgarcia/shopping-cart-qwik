@@ -1,5 +1,5 @@
 import { $, useComputed$, useContext, useSignal } from "@builder.io/qwik";
-import { CartContext } from "~/context";
+import { CartContext } from "../context";
 import { IProduct } from "~/interface";
 
 
@@ -25,7 +25,7 @@ export const useShoppingCart = () =>{
             cartContext.cartItems.filter(product => product.id === id));
 
     return {
-        cartItem: useComputed$(() => cartContext.cartItems),
+        cartItems: useComputed$(() => cartContext.cartItems),
         subTotal,
         totalItems,
 

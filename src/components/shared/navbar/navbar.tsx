@@ -4,7 +4,7 @@ import { StoreIcon } from '../icons/store-icon';
 import { Link } from '@builder.io/qwik-city';
 
 import { BsCart2, BsShop } from "@qwikest/icons/bootstrap";
-import { useShoppingCart } from '~/hooks/use-shopping-cart';
+import { useShoppingCart } from '~/shopping-cart/hooks/use-shopping-cart';
 
 export const Navbar = component$(() => {
 
