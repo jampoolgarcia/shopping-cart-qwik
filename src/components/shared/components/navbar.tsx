@@ -13,20 +13,18 @@ export const Navbar = component$(() => {
      <header class="border-b border-palette-lighter sticky top-0 z-20 bg-white">
       <div class="flex items-center justify-between mx-auto max-w-6xl px-6 pb-2 pt-4 md:pt-6">
         <Link href="/">
-          <a class=" cursor-pointer">
             <h1 class="flex no-underline">
-              <img height="32" width="32" alt="logo" class="h-8 w-8 mr-1 object-contain" src="../icons/shopify.svg" />
+              <img height="32" width="32" alt="logo" class="h-8 w-8 mr-1 object-contain" src="https://www.svgrepo.com/download/43071/shopping-bag.svg" />
               <span class="text-xl font-primary font-bold tracking-tight pt-1">
                 JShopping
               </span>
             </h1>
-          </a>
         </Link>
         <div>
           <Link
             href="/cart"
-          >
-            <a class=" relative" aria-label="cart">
+            class="relative"
+            aria-label="cart">
               <BsCart2 class="text-palette-primary w-6 m-auto" />
               {
                 totalItems.value === 0 ?
@@ -38,7 +36,6 @@ export const Navbar = component$(() => {
                     {totalItems}
                   </div>
               }
-            </a>
           </Link>
         </div>
       </div>
