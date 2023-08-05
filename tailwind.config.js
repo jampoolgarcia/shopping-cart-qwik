@@ -4,7 +4,31 @@ module.exports = {
   './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: theme => ({
+        '112': '28rem',
+        '120': '30rem',
+      }),
+      minHeight: theme => ({
+        '80': '20rem',
+      }),
+      colors: {
+        palette: {
+          lighter: '#F5F3FF',
+          light: '#DDD6FE',
+          primary: '#5B21B6',
+          dark: '#4C1D95',
+        },
+      },
+      fontFamily: {
+        primary: ['"Josefin Sans"']
+      }
+    },
   },
-  darkMode: "class"
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
+  ],
+  darkMode: "false",
 };
