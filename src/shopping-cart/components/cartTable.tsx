@@ -1,9 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
-import { IProduct } from "~/interface";
-import { Price } from "./price";
 import { BsTrash } from "@qwikest/icons/bootstrap";
+
+import { IProduct } from "~/interface";
+import { Price } from "~/components/shared/components/price";
 import { useShoppingCart } from "../hooks";
 
 interface Props {
