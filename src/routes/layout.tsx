@@ -1,6 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { Navbar } from "~/components/shared/navbar/navbar";
+
 import { CartProvaider } from "~/shopping-cart/context/cart.provaider";
+
+import { Footer } from "~/components/shared/components/footer";
+import { Navbar } from "~/components/shared/components/navbar";
 
 
 
@@ -8,9 +11,14 @@ export default component$(() => {
   return (
     <>
     <CartProvaider>
-      <div class="bg-[#eeefef] w-full min-h-screen flex">
+      <div class="flex flex-col justify-between min-h-screen ">
         <Navbar />
-        <Slot />
+
+        <main>
+         <Slot />
+        </main>
+       
+        <Footer />
       </div>
     </CartProvaider>
     </>
