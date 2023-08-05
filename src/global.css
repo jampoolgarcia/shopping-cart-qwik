@@ -36,6 +36,10 @@ body {
   @apply bg-blue-500 hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)];
 }
 
+.link {
+  @apply transition duration-150 hover:text-blue-200 hover:drop-shadow-xl active:text-blue-300;
+}
+
 .card {
   @apply bg-white rounded overflow-hidden shadow-lg max-h-[550px];
 }

@@ -24,8 +24,8 @@ export const CartItem = component$(({
                 class="rounded shadow-sm"
             />
             <div class="mx-3">
-                <h4 class="font-bold text-xl mb-2">{ title }</h4>
-                <p class="text-gray-700 text-base break-words">{ description }</p>
+                <h4 class="font-bold text-xl mb-2 truncate-text-2">{ title }</h4>
+                <p class="text-gray-700 text-base break-words truncate-text-2">{ description }</p>
             </div>
 
             <span class="font-bold text-xl">{ price }$</span> 

@@ -2,6 +2,8 @@ import { component$, Slot } from "@builder.io/qwik";
 import { Navbar } from "~/components/shared/navbar/navbar";
 import { CartProvaider } from "~/shopping-cart/context/cart.provaider";
 
+
+
 export default component$(() => {
   return (
     <>

@@ -1,6 +1,4 @@
 import { component$ } from '@builder.io/qwik';
-import { CartIcon } from '../icons/cart-icon';
-import { StoreIcon } from '../icons/store-icon';
 import { Link } from '@builder.io/qwik-city';
 
 import { BsCart2, BsShop } from "@qwikest/icons/bootstrap";
@@ -13,7 +11,7 @@ export const Navbar = component$(() => {
 
   return (<>
     <nav class="bg-[#1F1D2B] top-0 fixed h-14 w-full text-white flex justify-around items-center z-20 shadow-lg">
-        <Link href='/' class="ml-4 flex items-center">
+        <Link href='/' class="ml-4 flex items-center link">
             <span class="mr-2">
             <div style={{ fontSize: "30px" }}>
                 <BsShop />
