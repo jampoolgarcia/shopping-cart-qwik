@@ -12,12 +12,12 @@ interface Props {
 }
 
 
-export const cartTable = component$(({ products }: Props) =>{
+export const CartTable = component$(({ products }: Props) =>{
 
     const { subTotal } = useShoppingCart();
 
     return (<>   
-          <div class="min-h-80 max-w-2xl my-4 sm:my-8 mx-auto w-full">
+      <div class="min-h-80 max-w-2xl my-4 sm:my-8 mx-auto w-full">
       <table class="mx-auto">
         <thead>
           <tr class="uppercase text-xs sm:text-sm text-palette-primary border-b border-palette-light">

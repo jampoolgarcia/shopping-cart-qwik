@@ -5,6 +5,10 @@ import { BsCash } from "@qwikest/icons/bootstrap";
 
 import { CartItem } from "~/shopping-cart/components/cart-item";
 import { useShoppingCart } from "./hooks";
+import { PageTitle } from "~/components/shared/components";
+import { CartTable } from "./components/cartTable";
+import { CheckOutButton } from "./components/checkOutButton";
+import { BackToProductButton } from "~/product/components/backToProductButton";
 
 
 export const ShoppingCart = component$(() => {
@@ -13,36 +17,16 @@ export const ShoppingCart = component$(() => {
 
     return (
       <>
-      <section class="mt-14 flex justify-center w-full">
-          <div class="flex flex-col items-center w-[60%] mt-6 my-5">
-              <h1 class="font-bold text-xl ml-3">Carrito de Compras</h1>
-              {
-                cartItems.value.map((product) => (
-                  <div key={product.id}>
-                    <CartItem product={product} />
-                  </div>
-                ))
-              }
-
-              <hr class="w-full h-1 mx-auto my-4 bg-gray-700 border-0 rounded" /> 
-              
-              <div class="flex flex-col w-full">
-                <div class="flex items-center justify-between my-2">
-                  <div>
-                    <h2 class="text-md font-bold">Sub Total:</h2>
-                    <span class="text-xs">prductos: { totalItems } </span>
-                  </div>
-                  <span class="text-xl font-bold">{ subTotal }$</span>
-                </div>
-                  
-                <button class="bg-blue-700 transition duration-150 ease-in-out hover:bg-indigo-500 active:bg-blue-800 rounded p-2 text-white font-bold flex justify-center items-center">
-                  <span class="inline-block mr-2 text-xl">Pagar</span> <BsCash class="text-xl" />
-                </button>
-              </div>        
+       <div class="container mx-auto mb-20 min-h-screen">
+          <PageTitle text="Your Cart" />
+          <CartTable products={cartItems.value}
+          />
+          <div class="max-w-sm mx-auto space-y-4 px-2">
+            <CheckOutButton />
+            <BackToProductButton />
           </div>
 
-          
-      </section>
+        </div>
           
       </>
     )

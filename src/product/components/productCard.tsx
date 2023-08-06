@@ -29,7 +29,7 @@ export const ProductCard = component$(({
           height="288"
           src={image}
           alt={title}
-          class="transform  h-72 duration-500 ease-in-out hover:scale-110"
+          class="transform  h-72 duration-500 ease-in-out hover:scale-105 hover:shadow-lg"
         />
       </div>
       <div class="h-48 relative">
