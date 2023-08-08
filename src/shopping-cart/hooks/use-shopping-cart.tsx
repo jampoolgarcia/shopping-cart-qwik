@@ -1,6 +1,5 @@
 import { $, useComputed$, useContext, useSignal } from "@builder.io/qwik";
-import { CartContext } from "../context";
-import { IProduct } from "~/interface";
+import { CartContext, cartItems } from "../context";
 
 
 
@@ -9,23 +8,23 @@ export const useShoppingCart = () =>{
     const cartContext = useContext(CartContext);
 
     const subTotal = useComputed$(() => 
-        (cartContext.cartItems.reduce(
+        (cartContext.products.reduce(
             (prev: any, curr) => prev + curr.price, 0)));
             
     const totalItems = useComputed$(() => 
-        cartContext.cartItems.length);
+        cartContext.products.length);
 
 
     const addProduct = $(
-        (p: IProduct) => 
-            cartContext.cartItems.push(p));
+        (p: cartItems) => 
+            cartContext.products.push(p));
 
     const removeProduct = $(
         (id: number) => 
-            cartContext.cartItems.filter(product => product.id === id));
+            cartContext.products.filter(product => product.productId === id));
 
     return {
-        cartItems: useComputed$(() => cartContext.cartItems),
+        cartItems: useComputed$(() => cartContext.products),
         subTotal,
         totalItems,
 

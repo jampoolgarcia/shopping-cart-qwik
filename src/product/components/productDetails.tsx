@@ -3,6 +3,7 @@ import { component$ } from "@builder.io/qwik";
 import { BackToProductButton } from "./backToProductButton";
 import { IProduct } from "~/interface";
 import { ProductInfo } from "./productInfo";
+import { ProductForm } from "./productForm";
 
 
 export const ProductDatails = component$((props: { product: IProduct }) =>{
@@ -17,13 +18,13 @@ export const ProductDatails = component$((props: { product: IProduct }) =>{
         description={props.product.description}
         price={props.product.price}
       />
-      {/* <ProductForm 
-        title={product.title}
-        handle={productData.handle}
-        variants={productData.variants.edges} 
-        mainImg={productData.images.edges[0].node}
-        setVariantPrice={setVariantPrice}
-      />  */}
+      <ProductForm 
+        //title={product.title}
+        //handle={productData.handle}
+        //variants={productData.variants.edges} 
+        //mainImg={productData.images.edges[0].node}
+        //setVariantPrice={setVariantPrice}
+      /> 
     </div>
     )
 }) 

@@ -5,7 +5,10 @@ export const CartProvaider = component$(() => {
 
     // creamos el estado por defecto
     const cart = useStore<ICartState>({
-        cartItems: []
+        id: 1,
+        userId: 1,
+        date: new Date('2020-03-02T00:00:00.000Z'),
+        products: []
     })
 
     // proveemos el contexto en la app
