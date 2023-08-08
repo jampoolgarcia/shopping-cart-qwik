@@ -3,7 +3,7 @@ import { IProduct } from "~/interface";
 
 export interface cartItems {
     productId: number;
-    quantity: 1;
+    quantity: number;
     price: number;
 }
 

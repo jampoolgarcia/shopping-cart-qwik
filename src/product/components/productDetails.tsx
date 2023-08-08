@@ -18,13 +18,7 @@ export const ProductDatails = component$((props: { product: IProduct }) =>{
         description={props.product.description}
         price={props.product.price}
       />
-      <ProductForm 
-        //title={product.title}
-        //handle={productData.handle}
-        //variants={productData.variants.edges} 
-        //mainImg={productData.images.edges[0].node}
-        //setVariantPrice={setVariantPrice}
-      /> 
+      <ProductForm product={props.product} /> 
     </div>
     )
 }) 
