@@ -1,9 +1,9 @@
 import { $, useComputed$, useContext, useSignal } from "@builder.io/qwik";
-import { CartContext, cartItems } from "../context";
+import { CartContext, ICartItems } from "../context";
 
 
 
-export const useShoppingCart = () =>{
+export const useShoppingCart = () => {
 
     const cartContext = useContext(CartContext);
 
@@ -16,7 +16,7 @@ export const useShoppingCart = () =>{
 
 
     const addProduct = $(
-        (p: cartItems) => 
+        (p: ICartItems) => 
             cartContext.products.push(p));
 
     const removeProduct = $(

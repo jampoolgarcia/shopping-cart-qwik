@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { BsTrash } from '@qwikest/icons/bootstrap';
-import { IProduct } from '~/interface';
+import { IProduct } from '~/product/interface';
 
 export interface Props {
     product: IProduct,

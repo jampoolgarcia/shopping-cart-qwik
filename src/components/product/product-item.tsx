@@ -2,7 +2,7 @@ import { $, component$ } from '@builder.io/qwik';
 import { BsCartPlus } from '@qwikest/icons/bootstrap';
 import { useShoppingCart } from '~/shopping-cart/hooks/use-shopping-cart';
 
-import { IProduct } from '~/interface';
+import { IProduct } from '~/product/interface';
 
 interface Props {
   product: IProduct

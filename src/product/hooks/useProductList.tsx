@@ -1,8 +1,6 @@
-import { routeLoader$ } from "@builder.io/qwik-city";
-import { getProducts } from "~/helpers/get-products";
-import { IProduct } from "~/product/interface";
+import { $, useComputed$, useContext } from "@builder.io/qwik";
+
 import { productsContext } from "../context/product.context";
-import { useContext } from "@builder.io/qwik";
 
 // export const useProductList = routeLoader$<IProduct[]>(async() =>{
 //     const products = await getProducts();
@@ -12,8 +10,20 @@ import { useContext } from "@builder.io/qwik";
 export const useProductList = () => {
     const produts = useContext(productsContext);
 
-    const getOneProductId = (productId: number) => {
+    const getOneProductId = $((productId: number) => {
+        return produts.filter(prod => prod.id === productId)
+    })
 
+    const getProductsForIds = $((ids: number[]) => {
+        return ids.map(id => produts.filter(prod => prod.id === id));
+    })
+
+
+    return {
+        produts: useComputed$(() => produts),
+
+        getOneProductId,
+        getProductsForIds 
     }
     
 }

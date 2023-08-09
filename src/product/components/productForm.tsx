@@ -1,13 +1,13 @@
 import { $, component$, useSignal } from "@builder.io/qwik";
 import { BsCart2 } from "@qwikest/icons/bootstrap";
-import { IProduct } from "~/interface";
-import { cartItems } from "~/shopping-cart/context";
+import { IProduct } from "~/product/interface";
+import { ICartItems } from "~/shopping-cart/context";
 import { useShoppingCart } from "~/shopping-cart/hooks";
 
 export const ProductForm = component$((props: { product: IProduct }) => {
 
     const { addProduct } = useShoppingCart();
-    const itemCart = useSignal<cartItems>({
+    const itemCart = useSignal<ICartItems>({
         productId: props.product.id,
         quantity: 3,
         price: Number(props.product.price)

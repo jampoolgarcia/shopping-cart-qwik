@@ -3,12 +3,13 @@ import { Link } from "@builder.io/qwik-city";
 
 import { BsTrash } from "@qwikest/icons/bootstrap";
 
-import { IProduct } from "~/interface";
+import { IProduct } from "~/product/interface";
 import { Price } from "~/components/shared/components/price";
 import { useShoppingCart } from "../hooks";
+import { ICartItems } from "../context";
 
 interface Props {
-    products: IProduct[],
+    products: ICartItems[],
 }
 
 

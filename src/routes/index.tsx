@@ -6,7 +6,7 @@ import { ProductCard } from "~/product/components/productCard";
 
 import { getProducts } from "~/helpers/get-products";
 
-import { IProduct } from "~/interface";
+import { IProduct } from "~/product/interface";
 
 export const useProductList = routeLoader$<IProduct[]>(async() =>{
   const products = await getProducts();

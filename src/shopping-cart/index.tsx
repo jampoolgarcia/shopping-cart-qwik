@@ -1,9 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
 
-import { BsCash } from "@qwikest/icons/bootstrap";
 
-import { CartItem } from "~/shopping-cart/components/cart-item";
 import { useShoppingCart } from "./hooks";
 import { PageTitle } from "~/components/shared/components";
 import { CartTable } from "./components/cartTable";
@@ -13,7 +11,7 @@ import { BackToProductButton } from "~/product/components/backToProductButton";
 
 export const ShoppingCart = component$(() => {
 
-    const { cartItems, subTotal, totalItems } = useShoppingCart(); 
+    const { cartItems } = useShoppingCart(); 
 
     return (
       <>
