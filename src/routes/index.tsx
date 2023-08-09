@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 
 import { PageTitle } from "~/components/shared/components";
@@ -7,15 +7,20 @@ import { ProductCard } from "~/product/components/productCard";
 import { getProducts } from "~/helpers/get-products";
 
 import { IProduct } from "~/product/interface";
+import { productsContext } from "~/product/context/product.context";
 
-export const useProductList = routeLoader$<IProduct[]>(async() =>{
-  const products = await getProducts();
-  return products;
-})
 
 export default component$(() => {
 
-  const products = useProductList();
+  const productsState = useContext(productsContext);
+
+
+  useVisibleTask$(async () =>{
+    if(productsState.products.length <= 0) {
+      const products = await getProducts();
+      productsState.products = [...productsState.products, ...products];
+    }
+  })
 
   return (<>
       <div class="flex flex-col items-center w-full">
@@ -29,7 +34,7 @@ export default component$(() => {
 
         <div class="py-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
           {
-            products.value.map((product) => (
+            productsState.products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))
           }
