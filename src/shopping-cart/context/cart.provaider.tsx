@@ -1,7 +1,7 @@
-import { Slot, component$, useContextProvider, useStore } from "@builder.io/qwik";
+import { $, useContextProvider, useStore } from "@builder.io/qwik";
 import { CartContext, ICartState } from "./cart.context";
 
-export const CartProvaider = component$(() => {
+export const cartProvaider = () => {
 
     // creamos el estado por defecto
     const cart = useStore<ICartState>({
@@ -14,6 +14,4 @@ export const CartProvaider = component$(() => {
     // proveemos el contexto en la app
     useContextProvider(CartContext, cart);
 
-
-    return (<Slot />)
-})
+}
